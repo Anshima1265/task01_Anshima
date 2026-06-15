@@ -4,9 +4,7 @@ from datetime import datetime
 import random
 import string
 
-# ==========================
-# CHATBOT LOGIC
-# ==========================
+
 def get_response(user):
 
     user = user.lower().strip()
@@ -155,9 +153,7 @@ exit
         return "I don't understand that command.\nType 'help'."
 
 
-# ==========================
-# SEND MESSAGE
-# ==========================
+
 def send_message():
 
     user_message = entry.get()
@@ -186,16 +182,12 @@ def send_message():
     entry.delete(0, tk.END)
 
 
-# ==========================
-# CLEAR CHAT
-# ==========================
+
 def clear_chat():
     chat_area.delete("1.0", tk.END)
 
 
-# ==========================
-# MAIN WINDOW
-# ==========================
+
 root = tk.Tk()
 
 root.title("🤖 Smart AI Chatbot")
@@ -206,9 +198,7 @@ root.configure(bg="#121212")
 
 root.resizable(False, False)
 
-# ==========================
-# HEADER
-# ==========================
+
 header = tk.Label(
     root,
     text="🤖 SMART AI CHATBOT",
@@ -220,9 +210,7 @@ header = tk.Label(
 
 header.pack(fill="x")
 
-# ==========================
-# CHAT AREA
-# ==========================
+
 chat_area = scrolledtext.ScrolledText(
     root,
     wrap=tk.WORD,
@@ -265,9 +253,7 @@ Enjoy chatting!
     "bot"
 )
 
-# ==========================
-# INPUT FRAME
-# ==========================
+
 input_frame = tk.Frame(
     root,
     bg="#121212"
@@ -296,9 +282,8 @@ entry.pack(
     ipady=12
 )
 
-# ==========================
-# SEND BUTTON
-# ==========================
+
+
 send_btn = tk.Button(
     input_frame,
     text="Send ➤",
@@ -316,9 +301,7 @@ send_btn.pack(
     ipady=8
 )
 
-# ==========================
-# CLEAR BUTTON
-# ==========================
+
 clear_btn = tk.Button(
     root,
     text="🗑 Clear Chat",
@@ -336,9 +319,8 @@ clear_btn.pack(
     ipady=6
 )
 
-# ==========================
-# FOOTER
-# ==========================
+
+
 footer = tk.Label(
     root,
     text="Developed using Python & Tkinter",
@@ -349,8 +331,8 @@ footer = tk.Label(
 
 footer.pack(fill="x")
 
-# Enter Key Support
+
 entry.bind("<Return>", lambda event: send_message())
 
-# Run App
+
 root.mainloop()
